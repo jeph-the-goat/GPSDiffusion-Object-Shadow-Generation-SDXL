@@ -334,7 +334,7 @@ def parse_args(input_args=None):
     parser.add_argument(
         "--controlnet_model_name_or_path",
         type=str,
-        default='./models/pretrained_models/controlnet',
+        default='./pretrained_models/controlnet',
         help="Path to pretrained controlnet model or model identifier from huggingface.co/models."
         " If not specified controlnet weights are initialized from unet.",
     )
@@ -366,7 +366,7 @@ def parse_args(input_args=None):
     parser.add_argument(
         "--pretrained_ip_adapter_path",
         type=str,
-        default="./models/pretrained_models/ip_adapter.ckpt",
+        default="./pretrained_models/ip_adapter.ckpt",
         help="The output directory where the model predictions and checkpoints will be written.",
     )
     parser.add_argument(
@@ -843,12 +843,12 @@ def main(args):
     )
 
     mask_cls = MaskCls(num_classes=256)
-    if os.path.exists('./models/pretrained_models/Shadow_cls.pth'):
-        mask_cls.load_state_dict(torch.load('./models/pretrained_models/Shadow_cls.pth')['net'])
+    if os.path.exists('./pretrained_models/Shadow_cls.pth'):
+        mask_cls.load_state_dict(torch.load('./pretrained_models/Shadow_cls.pth')['net'])
         print('Loading mask embeddings classification model successfully')
     bbx_reg = RegNetwork()
-    if os.path.exists('./models/pretrained_models/Shadow_reg.pth'):
-        bbx_reg.load_state_dict(torch.load('./models/pretrained_models/Shadow_reg.pth')['net'])
+    if os.path.exists('./pretrained_models/Shadow_reg.pth'):
+        bbx_reg.load_state_dict(torch.load('./pretrained_models/Shadow_reg.pth')['net'])
         print('Loading rotated bounding box regression model successfully')
 
     if args.controlnet_model_name_or_path:
@@ -1129,7 +1129,7 @@ def main(args):
                     )
 
                     mask_label = mask_cls(geometry_input)
-                    with open('./models/pretrained_models/Shadow_cls_label.pkl', 'rb') as f:
+                    with open('./pretrained_models/Shadow_cls_label.pkl', 'rb') as f:
                         centroid_dict = pickle.load(f)
                     _, top64_label = torch.topk(mask_label, 64, largest=True, sorted=False)
                     mask_embeddings = batch['embeddings'].to(accelerator.device)
