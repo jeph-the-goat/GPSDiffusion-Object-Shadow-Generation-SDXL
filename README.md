@@ -26,11 +26,13 @@ The base diffusion model is replaced with Stable Diffusion XL (SDXL) for improve
     pip install -e .
     pip install -r requirements.txt
 
-    And initialize an [🤗Accelerate](https://github.com/huggingface/accelerate/) environment with:
+And initialize an [🤗Accelerate](https://github.com/huggingface/accelerate/) environment with:
+
     accelerate config
 
-    Or for a default accelerate configuration without answering questions about your environment:
-    accelerate config
+Or for a default accelerate configuration without answering questions about your environment:
+
+    accelerate config default
 
 ### Training
     accelerate launch train_GPSDiffusion_sdxl.py
