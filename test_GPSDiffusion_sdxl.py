@@ -131,7 +131,8 @@ class TestDataset(Dataset):
                     batch=dummy_batch,
                     proportion_empty_prompts=args.proportion_empty_prompts,
                     text_encoders=self.text_encoders,
-                    tokenizers=self.tokenizers
+                    tokenizers=self.tokenizers,
+                    is_train=False
                 )
 
             prompt_embeds.append(embeddings["prompt_embeds"].cpu())
