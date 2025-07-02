@@ -10,7 +10,7 @@ This repository presents GPSDiffusion-SDXL, an upgraded version of our [GPSDiffu
 We have replaced the original Stable Diffusion 1.5 (SD 1.5) base model with the more advanced Stable Diffusion XL (SDXL) for enhanced generation performance. The following visual comparison demonstrates the quality improvements of SDXL over its predecessor SD 1.5. From left to right, we show the composite image, foreground mask, the result based on SD 1.5, the result based on SD XL, and ground-truth.
 
 %<p align='center'>  
-%  <img src='figures/cmp_with_SGDiffusion.jpg'  width=95% />
+%  <img src='com_with_sd1_5.jpg'  width=95% />
 %</p>
 
 
