@@ -477,14 +477,14 @@ def parse_args(input_args=None):
     parser.add_argument(
         "--pretrained_model_name_or_path",
         type=str,
-        default=None,
+        default='stabilityai/stable-diffusion-xl-base-1.0',
         # required=True,
         help="Path to pretrained model or model identifier from huggingface.co/models.",
     )
     parser.add_argument(
         "--pretrained_vae_model_name_or_path",
         type=str,
-        default='stabilityai/stable-diffusion-xl-base-1.0',
+        default=None,
         help="Path to an improved VAE to stabilize training. For more details check out: https://github.com/huggingface/diffusers/pull/4038.",
     )
     parser.add_argument(
