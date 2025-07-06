@@ -1179,8 +1179,8 @@ def main(args):
                 Image.fromarray(decoded).save(filename)
 
 
-                shadowfree_img_tensor = batch["pixel_values"][0].cpu()
-                shadowfree_img = (shadowfree_img_tensor.permute(1, 2, 0).numpy().clip(0, 1) * 255).astype(np.uint8)
+                shadowfree_img = batch["pixel_values"][0].cpu().permute(1, 2, 0).numpy()
+                shadowfree_img = ((np.clip((shadowfree_img + 1) / 2, 0, 1)) * 255).astype(np.uint8)
                 shadowfree_path = os.path.join(shadowfree_dir, f"{batch_name[0]}_{repeat}.png")
                 Image.fromarray(shadowfree_img).save(shadowfree_path)
 
