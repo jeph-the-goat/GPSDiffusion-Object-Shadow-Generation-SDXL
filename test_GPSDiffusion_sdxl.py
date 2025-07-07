@@ -91,7 +91,7 @@ class TestDataset(Dataset):
         self.tokenizers = tokenizers
         self.caption_column = caption_column
 
-        with open(os.path.join(self.data_root, 'test.txt'), 'r') as f:
+        with open(os.path.join(self.data_root, 'TestLabel.txt'), 'r') as f:
             self.data = [line.strip() for line in f.readlines()]
 
         self.prompts = ['foreground object with shadow'] * len(self.data)
