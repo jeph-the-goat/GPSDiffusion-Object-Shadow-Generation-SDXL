@@ -16,7 +16,7 @@ We replace the original Stable Diffusion 1.5 (SD 1.5) with the more advanced Sta
 We also present a visual comparison between SDXL and SD 1.5 using different random seeds. From left to right, we show the composite image, foreground mask, four SD1.5 outputs with varying seeds, four SDXL outputs with varying seeds, and the ground-truth. Notably, the SDXL version demonstrates significantly improved output stability.
 
 <p align='center'>  
-  <img src='cmp_with_sd1_5_ranseed.png'  width=90% />
+  <img src='cmp_with_sd1_5.png'  width=90% />
 </p>
 
 ### Installation
