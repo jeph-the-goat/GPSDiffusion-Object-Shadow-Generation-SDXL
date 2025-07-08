@@ -1582,7 +1582,7 @@ def main(args):
             controlnet = unwrap_model(controlnet)
             ip_adapter = unwrap_model(ip_adapter)
             
-            save_dir = os.path.join(args.output_dir, f"epoch-{epoch+22}")
+            save_dir = os.path.join(args.output_dir, f"epoch-{epoch}")
             os.makedirs(save_dir, exist_ok=True)
             torch.save({
                 "image_proj": ip_adapter.image_proj_model.state_dict(),
