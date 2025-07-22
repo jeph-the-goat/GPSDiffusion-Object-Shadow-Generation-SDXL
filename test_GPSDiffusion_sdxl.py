@@ -1072,7 +1072,7 @@ def main(args):
  
                 bsz = latents.shape[0]
                 timesteps = torch.full((bsz,), 999, device=latents.device, dtype=torch.long)
-                timesteps = torch.randint(0, noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()
+                # timesteps = torch.randint(0, noise_scheduler.config.num_train_timesteps, (bsz,), device=latents.device).long()
                 noisy_latents = noise_scheduler.add_noise(latents.float(), noise.float(), timesteps).to(device=latents.device, dtype=weight_dtype)
                 latents = noisy_latents
 
